@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\..\Downloads\Library-Management-System-In-Asp.Net_\Library Management System In Asp.Net\OnlineLiberary\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +79,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="obout_Calendar2_Net">
+      <HintPath>..\..\..\..\..\Downloads\Library-Management-System-In-Asp.Net_\Library Management System In Asp.Net\OnlineLiberary\Bin\obout_Calendar2_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_EasyMenu_Pro">
+      <HintPath>..\..\..\..\..\Downloads\Library-Management-System-In-Asp.Net_\Library Management System In Asp.Net\OnlineLiberary\Bin\obout_EasyMenu_Pro.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Grid_NET">
+      <HintPath>..\..\..\..\..\Downloads\Library-Management-System-In-Asp.Net_\Library Management System In Asp.Net\OnlineLiberary\Bin\obout_Grid_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Interface">
+      <HintPath>..\..\..\..\..\Downloads\Library-Management-System-In-Asp.Net_\Library Management System In Asp.Net\OnlineLiberary\Bin\obout_Interface.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -198,6 +213,14 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\AddAccount.aspx" />
+    <Content Include="Admin\AssignRole.aspx" />
+    <Content Include="Admin\DeleteAccount.aspx" />
+    <Content Include="Admin\Search.aspx" />
+    <Content Include="App_Data\elib.mdf" />
+    <Content Include="App_Data\elib_log.ldf">
+      <DependentUpon>elib.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -210,9 +233,37 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\ArrowDown.gif" />
+    <Content Include="Images\ArrowUp.gif" />
+    <Content Include="Images\bg2.jpg" />
+    <Content Include="Images\Calendar.png" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\gmail.png" />
+    <Content Include="Images\green_bg_Tab.gif" />
+    <Content Include="Images\green_left_tab.gif" />
+    <Content Include="Images\green_right_Tab.gif" />
+    <Content Include="Images\header.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\newu.png" />
+    <Content Include="Images\pdf.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\signup.png" />
+    <Content Include="Images\sub.png" />
+    <Content Include="PageCommon\Aboutus.aspx" />
+    <Content Include="PageCommon\Contactus.aspx" />
+    <Content Include="PageCommon\Feedback.aspx" />
+    <Content Include="PageCommon\index.aspx" />
+    <Content Include="PageCommon\Search.aspx" />
+    <Content Include="PageCommon\LoginPage.aspx" />
+    <Content Include="PageUser\Home.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="Master\AdminMaster.master" />
+    <Content Include="Master\MasterPage.master" />
+    <Content Include="Master\MasterUser.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Login.aspx" />
-    <Content Include="msg.aspx" />
+    <Content Include="PageUser\Issue.aspx" />
+    <Content Include="PageUser\msg.aspx" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -370,6 +421,34 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddAccount.aspx.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddAccount.aspx.designer.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AssignRole.aspx.cs">
+      <DependentUpon>AssignRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AssignRole.aspx.designer.cs">
+      <DependentUpon>AssignRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteAccount.aspx.cs">
+      <DependentUpon>DeleteAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteAccount.aspx.designer.cs">
+      <DependentUpon>DeleteAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -398,20 +477,87 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="PageCommon\Aboutus.aspx.cs">
+      <DependentUpon>Aboutus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="PageCommon\Aboutus.aspx.designer.cs">
+      <DependentUpon>Aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageCommon\Contactus.aspx.cs">
+      <DependentUpon>Contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCommon\Contactus.aspx.designer.cs">
+      <DependentUpon>Contactus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageCommon\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCommon\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageCommon\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCommon\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCommon\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageUser\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageUser\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageUser\Issue.aspx.cs">
+      <DependentUpon>Issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageUser\Issue.aspx.designer.cs">
+      <DependentUpon>Issue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AdminMaster.master.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\AdminMaster.master.designer.cs">
+      <DependentUpon>AdminMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterUser.master.cs">
+      <DependentUpon>MasterUser.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\MasterUser.master.designer.cs">
+      <DependentUpon>MasterUser.master</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="msg.aspx.cs">
+    <Compile Include="PageUser\msg.aspx.cs">
       <DependentUpon>msg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="msg.aspx.designer.cs">
+    <Compile Include="PageUser\msg.aspx.designer.cs">
       <DependentUpon>msg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageCommon\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCommon\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -436,10 +582,15 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
