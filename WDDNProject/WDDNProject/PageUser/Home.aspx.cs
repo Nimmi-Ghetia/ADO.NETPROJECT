@@ -11,7 +11,10 @@ namespace WDDNProject.PageUser
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string t = Session["type"]+"";
+            /*if (!Session["type"].Equals("admin"))
+                Response.Redirect("~/PageCommon/LoginPage.aspx");*/
+            Label1.Text = Session["uid"].ToString()+t;
         }
     }
 }

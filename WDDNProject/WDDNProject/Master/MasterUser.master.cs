@@ -9,17 +9,20 @@ public partial class Master_MasterUser : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.User.Identity.Name == string.Empty)
+        int type = Int32.Parse(Session["type"]+"");
+        if (Session["uid"] == null || (type!=1&& type!=2))
         {
             Response.Redirect("~/PageCommon/LoginPage.aspx");
 
         }
-        else
+        /*else
         {
             LoginView logInView = (LoginView)this.Master.FindControl("HeadLoginView");
-           
-            HyperLink rdirect = (HyperLink)logInView.FindControl("HyperLink1");
-            rdirect.NavigateUrl = "~/PageUser/MyProfile.aspx";
-        }
+
+            //HyperLink rdirect = (HyperLink)logInView.FindControl("HyperLink1");
+            //rdirect.NavigateUrl = "~/PageUser/MyProfile.aspx";
+            Response.Redirect("~/PageUser/MyProfile.aspx");
+            //Label1.Text = Session["uid"] + "";
+        }*/
     }
 }

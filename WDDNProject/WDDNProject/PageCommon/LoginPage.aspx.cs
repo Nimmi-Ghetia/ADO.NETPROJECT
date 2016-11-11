@@ -31,25 +31,32 @@ namespace WDDNProject.PageUser
                 string unm = rd["User_Id"].ToString().Trim();
                 string pass = rd["Password"].ToString().Trim();
 
-                Label1.Text += (username.Equals(unm)) + "   " + password + pass + ("nimmi".Equals("nimmi")) + "   " + password.Equals(pass);
+                //Label1.Text += (username.Equals(unm)) + "   " + password + pass + ("nimmi".Equals("nimmi")) + "   " + password.Equals(pass);
                 if (username.Equals(unm) && password.Equals(pass))
                 {
                     //rd.Close();
-                    Label1.Text += unm + "=" + username + "and and" + pass + "=" + password;
+                  //  Label1.Text += unm + "=" + username + "and and" + pass + "=" + password;
                     string s = "select Role from UserType where User_Id=" + unm +"and Role_Id="+rd["Role_Id"]  ;
                     //SqlCommand   cmd1 = new SqlCommand(s,con);
                     //     SqlDataReader rd1 = cmd1.ExecuteReader();
                     //   while(rd1.Read())
                     // {
-                    Session["type"] = rd["Role_Id"];
+                    if(Session["type"]==null|| Session["uid"]==null)
+                    {
+                        Session["type"] = rd["Role_Id"]+"";
+                        Session["uid"] = unm;
+                    }
+
                     //}
-
-
+                    int type = Int32.Parse(Session["type"]+"");
+                    if (type==2)
                     Response.Redirect("~/PageUser/Home.aspx");
+                    else if(type==1)
+                    Response.Redirect("~/PageAdmin/Admin.aspx");
                 }
             }
-            Label1.Text += "Wrong username or password";
-               Response.Redirect("LoginPage.aspx");
+            Label1.Text = "Wrong username or password";
+               //Response.Redirect("LoginPage.aspx");
             //}catch(Exception ex)
             //{
             //    Label1.Text = ex.StackTrace.ToString() ;
@@ -58,7 +65,7 @@ namespace WDDNProject.PageUser
 
         protected void Button1_Clicked(object sender, EventArgs e)
         {
-            Response.Redirect("~/PageCommon/index.aspx");
+            Response.Redirect("~/PageCommon/NewUser.aspx");
         }
     }
 }

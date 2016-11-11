@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Master/MasterPage.master" AutoEventWireup="true" Inherits="Master_MasterUser" Codebehind="MasterUser.master.cs" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Master/MasterPage.master" AutoEventWireup="true" CodeFile="MasterUser.master.cs" Inherits="Master_MasterUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -8,10 +8,10 @@
                     <li><a href="../PageUser/MyProfile.aspx">My Info</a></li>
                     <li><a href="../PageUser/Issue.aspx">Issue Books</a></li>
                     <li><a href="../PageUser/UserReturnBook.aspx">Issued Status</a></li>
-                    <li><a href="../PageUser/Setting.aspx">Settings</a></li>
-                    
+                    <li><a href="../PageCommon/Logout.aspx">Logout</a></li>
                 </ul>
             </div>
+   
     <asp:ContentPlaceHolder runat="server" ID="contentuser">
     </asp:ContentPlaceHolder>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Master_MasterPage" Codebehind="MasterPage.master.cs" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Master_MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -26,8 +26,8 @@
                     <li><a href="../PageCommon/Search.aspx">Search Books</a></li>
                     
                     <li><a href="../PageCommon/Feedback.aspx">Suggestion</a></li>
-                    <li><a href="../PageCommon/Contactus.aspx">Contact Us</a></li>
-                    <li><a href="../PageCommon/AboutUs.aspx">About Us</a></li>
+                   <%-- <li><a href="#">Contact Us</a></li>
+                    <li><a href="../PageCommon/AboutUs.aspx">About Us</a></li>--%>
                 </ul>
             </div>
             <div id="show">
@@ -36,29 +36,32 @@
                     <marquee>Welcome to Education Library</marquee>
                 </div>
                 <div id="righs" style="float: right">
-                    
-                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <a href="../PageCommon/LoginPage.aspx">Login</a>
+                    <!--<asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                         <AnonymousTemplate>
                             [ <a href="~/PageCommon/LoginPage.aspx" id="HeadLoginStatus" runat="server" style="color: #00BFBF; font-size: medium;">Log In</a> ]
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             Welcome <span class="bold">
-                                <asp:HyperLink ID="HyperLink1" ForeColor="PeachPuff" Font-Size="Larger" ToolTip="MyHome"  runat="server"> <asp:LoginName ID="HeadLoginName" runat="server" /></asp:HyperLink>
+                        
+                            <asp:HyperLink ID="HyperLink1" ForeColor="PeachPuff" Font-Size="Larger" ToolTip="MyHome"  runat="server" Text="user"></asp:HyperLink>
                             </span>&nbsp;&nbsp;
                             [
                             <asp:LoginStatus ID="HeadLoginStatus" ForeColor="#87cfe6" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/PageCommon/index.aspx" />
                             ]
                         </LoggedInTemplate>
-                    </asp:LoginView>
+                    </asp:LoginView>-->
                 </div>
             </div>
+            
+            
             <asp:ContentPlaceHolder ID="content1" runat="server">
             </asp:ContentPlaceHolder>
 
             <div id="footer">
                 <hr />
              <div style="float:left;">
-                 <p>&copy; 2014 Amit kumar</p>
+                 <p>&copy; 2016 Nimmi</p>
              </div>
                 <div style="float:right">
                     <table>

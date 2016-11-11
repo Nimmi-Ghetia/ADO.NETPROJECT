@@ -9,26 +9,18 @@ public partial class Master_AdminMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.User.Identity.Name == string.Empty)
+        int type = 0;
+        if(Session["type"]!=null)
+        type = Int32.Parse(Session["type"] + "");
+        if (Session["uid"] == null || type==0)
         {
             Response.Redirect("~/PageCommon/LoginPage.aspx");
 
         }
-        else
+        else if(type==2)
         {
-            bool type = Page.User.IsInRole("Admin");
-            LoginView logInView = (LoginView)this.Master.FindControl("HeadLoginView");
-            HyperLink rdirect = (HyperLink)logInView.FindControl("HyperLink1");
-            if (!type)
-           {
-               Response.Redirect("~/PageCommon/error.aspx");
-               rdirect.NavigateUrl = "~/PageUser/MyProfile.aspx";
-           }
-           else
-           {
-                
-                rdirect.NavigateUrl = "~/PageAdmin/Admin.aspx";
-           }
+            Response.Redirect("~/PageUser/Home.aspx");
         }
+        
     }
 }

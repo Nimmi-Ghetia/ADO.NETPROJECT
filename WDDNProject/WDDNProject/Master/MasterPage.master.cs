@@ -9,20 +9,29 @@ public partial class Master_MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.User.Identity.Name != string.Empty)
-        {
-          HyperLink hyp=(HyperLink)HeadLoginView.FindControl("HyperLink1");
-          bool type = Page.User.IsInRole("Admin");
-          if (type)
+      //  if (Session["uid"] != null&&Session["type"]!=null)
+        //{
+            
+                //HyperLink hyp=(HyperLink)HeadLoginView.FindControl("HyperLink1");
+            /*LoginName lg = HeadLoginView.FindControl("HeadLoginName") as LoginName;
+            if(lg!=null)
+            {
+                lg.
+            } */              
+
+/*            int tp = Int32.Parse(Session["type"] + "");
+            if (tp==1)
           {
-              hyp.NavigateUrl = "~/PageAdmin/Admin.aspx";
+                Response.Redirect("~/PageAdmin/Admin.aspx");
+              //hyp.NavigateUrl = "~/PageAdmin/Admin.aspx";
           }
-          else
+          else if(tp==2)
           {
-              hyp.NavigateUrl = "~/PageUser/MyProfile.aspx";
+                Response.Redirect("~/PageUser/MyProfile.aspx");
+              //hyp.NavigateUrl = "~/PageUser/MyProfile.aspx";
           }
-         
-        }
+        */ 
+        //}
        
            
     }

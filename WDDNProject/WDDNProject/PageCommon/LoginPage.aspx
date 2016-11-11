@@ -57,15 +57,17 @@
         <div id="log" class="myt" style="width:410px;display:block;float:left; ">
           <div align="center" CssClass="conto">Log in</div>
             <br />Username :<asp:TextBox ID="unm" runat="server" CssClass="conto"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="unm"
+            ErrorMessage="Username Required"></asp:RequiredFieldValidator>
             <br />Password :<asp:TextBox ID="pwd" runat="server" CssClass="conto" TextMode="Password"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="pwd"
+            ErrorMessage="Password Required"></asp:RequiredFieldValidator>
             <br /><asp:Button runat="server" Text="Log in" CssClass="conto" VerticalAlign="Middle" OnClick="Button_Clicked"></asp:Button>
             <br /><br /><asp:Button runat="server" Text="Register" CssClass="conto" VerticalAlign="Middle" OnClick="Button1_Clicked"></asp:Button>
             <asp:Label ID="Label1" runat="server" Text="" VerticalAlign="Middle" CssClass="conto"></asp:Label>
         </div>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="unm"
-            ErrorMessage="Field Required"></asp:RequiredFieldValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="pwd"
-            ErrorMessage="Field Required"></asp:RequiredFieldValidator>
+        
+        
         
     </div>
 </asp:Content>

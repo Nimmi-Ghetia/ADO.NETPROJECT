@@ -8,10 +8,11 @@
             <li><a href="../PageAdmin/Admin.aspx">My Home</a></li>
             <li><a href="../PageAdmin/DeleteUser.aspx">Delete User</a></li>
             <li><a href="../PageAdmin/IssueRecords.aspx">Issue Books</a></li>
-            <li><a href="../PageAdmin/ReturnRestore.aspx">Restore Books</a></li>
+            <li><a href="../PageAdmin/StoreEbook.aspx">Add e-Books</a></li>
             <li><a href="../PageAdmin/StoreInfo.aspx">Add Books</a></li>
             <li><a href="../PageAdmin/ViewInformation.aspx">View Users</a></li>
             <li><a href="../PageAdmin/AsignRole.aspx">Settings</a></li>
+            <li><a href="../PageCommon/Logout.aspx">Logout</a></li>
         </ul>
     </div>
     <asp:ContentPlaceHolder runat="server" ID="contentuser">
