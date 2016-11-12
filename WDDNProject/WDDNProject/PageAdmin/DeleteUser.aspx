@@ -31,7 +31,7 @@
         </p>
         <p>
             <asp:Label ID="lblDelInfo" ForeColor="#0099FF" runat="server" Text="Information of deleted user : " Visible="false"></asp:Label>
-        </p>
+        </p><!--
         <asp:GridView ID="gvdeleteduser" AutoGenerateColumns="false" DataKeyNames="DelID" runat="server" Visible="false" Width="729px" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" CssClass="gvStyle">
             <EmptyDataTemplate>
                 <asp:Label ID="lblEmpty" style="color:#0099FF; padding-left:15px;" runat="server" Text="No User Has Been Deleted Yet."></asp:Label>
@@ -44,7 +44,7 @@
                 <asp:BoundField DataField="Address" HeaderText="Address" />
                 <asp:BoundField DataField="DeletedDate" HeaderText="Deleted Date" />
             </Columns>
-        </asp:GridView>
+        </asp:GridView>-->
     </div>
 </asp:Content>
 

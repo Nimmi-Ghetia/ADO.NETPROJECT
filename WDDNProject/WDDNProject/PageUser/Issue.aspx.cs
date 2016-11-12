@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
@@ -169,15 +170,30 @@ public partial class PageUser_Issue : System.Web.UI.Page
             }
             else
             {
+                DateTime d= DateTime.Now.Date;
+                
                 int lib_id = 1;
                 grdBookList.SelectedRow.Visible = false;
-                string temp = "insert into Book_Request (Book_Id,User_Id,Lib_Id,request_date,return_date) values('" + bk_ID + "','" + name + "','" + lib_id + "','" + DateTime.Now.Date + "','" + fdate+ "')";
+                con = new SqlConnection(str);
+                con.Open();
+
+                string temp = " insert into Book_Request (Book_Id,User_Id,Lib_Id,request_date,return_date)"
+              + "values(@bk,@2,@3,@4,@5)";
+                SqlCommand cmd = new SqlCommand(temp, con);
+                cmd.Parameters.AddWithValue("@bk", bk_ID);
+                cmd.Parameters.AddWithValue("@2", name);
+                cmd.Parameters.AddWithValue("@3", lib_id);
+                cmd.Parameters.AddWithValue("@4", d);
+                cmd.Parameters.AddWithValue("@5", fdate);
                 string upd = "update Book set Status='Requested' where Book_Id='" + bk_ID + "'";
-                
-                if (change(temp) > 0)
+               
+                int t = cmd.ExecuteNonQuery();
+                con.Close();
+                if (t > 0)
                 {
-                    change(upd);
+                    
                     lblReq.Visible = true;
+                    if(change(upd)>0)
                     lblReq.Text = "Request has been forwarded to administrator";
                     lblmsg.Visible = true;
                     lblmsg.Text = "You can issue only two books at a time. Only last two selection will be consider";
@@ -209,7 +225,9 @@ public partial class PageUser_Issue : System.Web.UI.Page
     {
          if (txtDate.Text != string.Empty)
         {
-            fdate = Convert.ToDateTime(txtDate.Text);
+            string f = txtDate.Text;
+            fdate = Convert.ToDateTime(f);
+           // fdate = DateTime.Parse(f);
             DateTime tdate = DateTime.Now;
             DateTime cdate = tdate.AddDays(20);
             if (fdate > cdate)

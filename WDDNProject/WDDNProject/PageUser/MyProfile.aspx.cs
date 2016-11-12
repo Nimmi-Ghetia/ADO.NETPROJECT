@@ -35,11 +35,12 @@ public partial class PageUser_MyProfile : System.Web.UI.Page
         SqlDataReader dr = cmd.ExecuteReader();
         if (dr.Read())
         {
-            txtName.Text = dr.GetString(1);
-           
-            txtmail.Text = dr.GetString(4).ToString();
-           
-            txtAddress.Text = dr.GetString(2).ToString();
+            if(dr["name"]!=null)
+            txtName.Text = dr["name"].ToString();
+           if(dr["email_id"]!=null)
+            txtmail.Text = dr["email_id"].ToString();
+            if (dr["address"] != null)
+            txtAddress.Text = dr["address"].ToString();
 
         }
 
@@ -68,7 +69,11 @@ public partial class PageUser_MyProfile : System.Web.UI.Page
            }
            else
            {
-               cmd = new SqlCommand("update users set name='" + txtName.Text+  "',email_id='" + (txtmail.Text) + "',address='"+txtAddress.Text+"' where User_Id='"+uname+"')",con);
+               cmd = new SqlCommand("update users set name=@1,email_id=@2,address=@3 where User_Id=@4",con);
+                cmd.Parameters.AddWithValue("@1", txtName.Text);
+                cmd.Parameters.AddWithValue("@2", txtmail.Text);
+                cmd.Parameters.AddWithValue("@3", txtAddress.Text);
+                cmd.Parameters.AddWithValue("@4", uname);
                Label1.Text = "Profile Updated Successfully";
            }
            conchk.Close();

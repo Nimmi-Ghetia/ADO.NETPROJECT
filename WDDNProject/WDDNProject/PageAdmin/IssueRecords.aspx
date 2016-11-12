@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="contentuser" Runat="Server">
     <div id="content">
         <p style="color:green"><b>Issue The Following Books .. </b></p><br />
-        <asp:GridView ID="gdIssue" runat="server" Width="700" AllowPaging="true" PageSize="10" OnSelectedIndexChanged="gdIssue_SelectedIndexChanged" OnPageIndexChanging="gdIssue_PageIndexChanging">
-            <HeaderStyle BackColor="#df5015" Font-Bold="true" ForeColor="White" />
+        <asp:GridView ID="gdIssue" runat="server" Width="700" AllowPaging="true" AutoGenerateColumns="false" PageSize="10" OnSelectedIndexChanged="gdIssue_SelectedIndexChanged" OnPageIndexChanging="gdIssue_PageIndexChanging">
+            <HeaderStyle BackColor="#df5015" Font-Bold="true" ForeColor="White"  />
                 <PagerSettings Mode="NumericFirstLast" FirstPageText="First" PreviousPageText="Previous" NextPageText="Next" LastPageText="Last" />
                 <PagerStyle BackColor="#7779AF" Font-Bold="true" ForeColor="White" />
             <Columns>
